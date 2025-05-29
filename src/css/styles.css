@@ -11,20 +11,14 @@
 @import url('./gallery.css');
 @import url('./container.css');
 
-header {
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.search-form {
+.form {
   display: flex;
   max-width: 600px;
   margin: 0 auto;
   padding-top: 36px;
 }
 
-.search-form input {
+.form input {
   flex: 1;
   padding: 10px 15px;
   font-size: 16px;
@@ -32,7 +26,7 @@ header {
   border-radius: 4px 0 0 4px;
 }
 
-.search-form button {
+.form button {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -42,6 +36,6 @@ header {
   cursor: pointer;
 }
 
-.search-form button:hover {
+.form button:hover {
   background-color: #0056b3;
 }
