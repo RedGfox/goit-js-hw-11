@@ -39,6 +39,7 @@ form.addEventListener('submit', async e => {
     } else {
       createGallery(data.hits);
     }
+    form.reset();
   } catch (error) {
     iziToast.error({
       title: 'Помилка',

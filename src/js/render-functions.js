@@ -4,17 +4,27 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const galleryContainer = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
 
-const lightbox = new SimpleLightbox('.gallery a');
+let lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
 export function createGallery(images) {
   const markup = images
-    .map(
-      ({ webformatURL, largeImageURL, tags }) => `
-      <a href="${largeImageURL}" class="gallery-item">
-        <img src="${webformatURL}" alt="${tags}" />
-      </a>
-    `
-    )
+    .map(img => {
+      return `
+        <li class="gallery-item">
+          <a href="${img.largeImageURL}">
+            <img src="${img.webformatURL}" alt="${img.tags}" />
+          </a>
+          <div class="info">
+            <p><b>Likes:</b> ${img.likes}</p>
+            <p><b>Views:</b> ${img.views}</p>
+            <p><b>Comments:</b> ${img.comments}</p>
+            <p><b>Downloads:</b> ${img.downloads}</p>
+          </div>
+        </li>`;
+    })
     .join('');
 
   galleryContainer.insertAdjacentHTML('beforeend', markup);
@@ -25,10 +35,9 @@ export function clearGallery() {
   galleryContainer.innerHTML = '';
 }
 
-export function showLoader() {
-  loader.classList.add('visible');
-}
-
 export function hideLoader() {
-  loader.classList.remove('visible');
+  loader.classList.add('is-hidden');
+}
+export function showLoader() {
+  loader.classList.remove('is-hidden');
 }

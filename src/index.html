@@ -8,22 +8,17 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header>
-      <form class="search-form">
-        <input
-          type="text"
-          name="search-text"
-          placeholder="Пошук зображень..."
-          required
-        />
-        <button type="submit">Пошук</button>
-      </form>
-    </header>
-
-    <main>
-      <ul class="gallery"></ul>
-      <div class="loader hidden">Loading</div>
-    </main>
+    <form class="search-form">
+      <input
+        type="text"
+        name="search-text"
+        placeholder="Пошук зображень..."
+        required
+      />
+      <button type="submit">Пошук</button>
+    </form>
+    <div class="loader is-hidden">Loading</div>
+    <ul class="gallery"></ul>
 
     <script type="module" src="./main.js"></script>
   </body>
